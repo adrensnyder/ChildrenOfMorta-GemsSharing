@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net46</TargetFramework>
+    <AssemblyName>ChildrenOfMorta_GemsSharing</AssemblyName>
+    <Product>Cihldren of Morta - Gems Sharing</Product>
+	<Copyright>© 2025 AdrenSnyder</Copyright>
+    <Version>0.1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json;
+      https://nuget.samboy.dev/v3/index.json
+    </RestoreAdditionalProjectSources>
+    <RootNamespace>ChildrenOfMorta_GemsSharing</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="5.*" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+    <PackageReference Include="UnityEngine.Modules" Version="2019.2.15" IncludeAssets="compile" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<Reference Include="Assembly-CSharp.dll">
+	  <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ChildrenOfMorta\ChildrenOfMorta_Data\Managed\Assembly-CSharp.dll</HintPath>
+	  <Private>false</Private>
+	</Reference>
+	<Reference Include="UnityEngine.UI">
+	  <HintPath>C:\Program Files (x86)\Steam\steamapps\common\ChildrenOfMorta\ChildrenOfMorta_Data\Managed\UnityEngine.UI.dll</HintPath>
+		<Private>false</Private>
+	</Reference>
+  </ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+  </ItemGroup>
+</Project>
